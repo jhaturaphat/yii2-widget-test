@@ -1,53 +1,134 @@
 <?php
 
+use kartik\widgets\SideNav;
+use yii\helpers\Url;
 /* @var $this yii\web\View */
 
 $this->title = 'My Yii Application';
 ?>
-<div class="site-index">
-
-    <div class="jumbotron text-center bg-transparent">
-        <h1 class="display-4">Congratulations!</h1>
-
-        <p class="lead">You have successfully created your Yii-powered application.</p>
-
-        <p><a class="btn btn-lg btn-success" href="http://www.yiiframework.com">Get started with Yii</a></p>
-    </div>
+<div class="site-index">    
 
     <div class="body-content">
-
+    <!-- row 1 -->
         <div class="row">
-            <div class="col-lg-4">
-                <h2>Heading</h2>
-
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-                    dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-                    ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-                    fugiat nulla pariatur.</p>
-
-                <p><a class="btn btn-outline-secondary" href="http://www.yiiframework.com/doc/">Yii Documentation &raquo;</a></p>
+            <div class="col-md-3">
+                <?php
+            echo kartik\widgets\StarRating::widget([
+                'name' => 'rating',
+                'pluginOptions' => ['size' => 'lg']
+            ]);
+        ?>
             </div>
-            <div class="col-lg-4">
-                <h2>Heading</h2>
-
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-                    dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-                    ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-                    fugiat nulla pariatur.</p>
-
-                <p><a class="btn btn-outline-secondary" href="http://www.yiiframework.com/forum/">Yii Forum &raquo;</a></p>
+            <div class="col-md-3">
+                <?php
+        echo kartik\widgets\SwitchInput::widget([
+            'name' => 'activation_status',
+            'pluginOptions' => ['size' => 'large']
+        ]);
+        ?>
             </div>
-            <div class="col-lg-4">
-                <h2>Heading</h2>
-
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-                    dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-                    ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-                    fugiat nulla pariatur.</p>
-
-                <p><a class="btn btn-outline-secondary" href="http://www.yiiframework.com/extensions/">Yii Extensions &raquo;</a></p>
+            <div class="col-md-3">
+                <?php
+                    
+                    echo kartik\widgets\Spinner::widget(['preset' => 'large', 'align' => 'left']);
+            ?>
+            </div>
+            <div class="col-md-3">
+            <?php               
+                use kartik\widgets\Alert;
+    
+                echo Alert::widget([
+                    'type' => Alert::TYPE_INFO,
+                    'title' => 'Note',
+                    'titleOptions' => ['icon' => 'info-sign'],
+                    'body' => 'This is an informative alert'
+                ]);       
+            ?>
             </div>
         </div>
+
+        <?php
+            use kartik\widgets\Growl;
+
+            echo Growl::widget([
+                'type' => Growl::TYPE_SUCCESS,
+                'icon' => 'fas fa-check-circle',
+                'title' => 'Note',
+                'showSeparator' => true,
+                'body' => 'This is a successful growling alert.'
+            ]);
+        ?>
+
+        <!-- row2 -->
+        <div class="row">            
+            <div class="col-md-3">
+                <?php
+                    use kartik\color\ColorInput;
+                    echo ColorInput::widget([
+                        'name' => 'color', 
+                        'options' => ['placeholder' => 'Select color...']
+                    ]);
+                ?>
+            </div>
+            <div class="col-md-3">
+                <?php
+                use kartik\widgets\AlertBlock;
+ 
+                echo AlertBlock::widget([
+                    'type' => AlertBlock::TYPE_ALERT,
+                    'useSessionFlash' => true
+                ]);
+                ?>
+            </div>
+            <div class="col-md-3">
+                <?php                
+                $data = [
+                    "red" => "red",
+                    "green" => "green",
+                    "blue" => "blue",
+                    "orange" => "orange",
+                    "white" => "white",
+                    "black" => "black",
+                    "purple" => "purple",
+                    "cyan" => "cyan",
+                    "teal" => "teal"
+                ];
+                    echo '<label class="control-label">Tag Multiple</label>';
+                    echo kartik\select2\Select2::widget([
+                        'name' => 'color_2',
+                        'value' => ['red', 'green'], // initial value
+                        'data' => $data,
+                        'maintainOrder' => true,
+                        'theme' => kartik\select2\Select2::THEME_MATERIAL,
+                        'options' => ['placeholder' => 'Select a color ...', 'multiple' => true],
+                        'pluginOptions' => [
+                            'tags' => true,
+                            'maximumInputLength' => 10
+                        ],
+                    ]);
+                ?>
+            </div>
+            <div class="col-md-3">
+
+            </div>
+        </div>
+
+        <!-- row3  -->
+        <div class="row">
+        <?php
+                echo kartik\widgets\FileInput::widget([
+                    'name' => 'attachments',                     
+                    'options' => [
+                        'multiple' => true,                        
+                    ], 
+                    'pluginOptions' => [
+                        'previewFileType' => 'any',
+                        
+                        ]
+                ]);
+                ?>
+        </div>
+
 
     </div>
 </div>
