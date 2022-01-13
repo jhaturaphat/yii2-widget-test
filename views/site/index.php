@@ -12,52 +12,20 @@ $this->title = 'My Yii Application';
     <!-- row 1 -->
         <div class="row">
             <div class="col-md-3">
-                <?php
-            echo kartik\widgets\StarRating::widget([
-                'name' => 'rating',
-                'pluginOptions' => ['size' => 'lg']
-            ]);
-        ?>
+            <?= $this->render('@app/views/site/star-rating')  ?>
             </div>
             <div class="col-md-3">
-                <?php
-        echo kartik\widgets\SwitchInput::widget([
-            'name' => 'activation_status',
-            'pluginOptions' => ['size' => 'large']
-        ]);
-        ?>
+            <?= $this->render('@app/views/site/switch-input')  ?>
             </div>
             <div class="col-md-3">
-                <?php
-                    
-                    echo kartik\widgets\Spinner::widget(['preset' => 'large', 'align' => 'left']);
-            ?>
+            <?= kartik\widgets\Spinner::widget(['preset' => 'large', 'align' => 'left']); ?>
             </div>
             <div class="col-md-3">
-            <?php               
-                use kartik\widgets\Alert;
-    
-                echo Alert::widget([
-                    'type' => Alert::TYPE_INFO,
-                    'title' => 'Note',
-                    'titleOptions' => ['icon' => 'info-sign'],
-                    'body' => 'This is an informative alert'
-                ]);       
-            ?>
+            <?= $this->render('@app/views/site/alert')  ?>
             </div>
         </div>
 
-        <?php
-            use kartik\widgets\Growl;
-
-            echo Growl::widget([
-                'type' => Growl::TYPE_SUCCESS,
-                'icon' => 'fas fa-check-circle',
-                'title' => 'Note',
-                'showSeparator' => true,
-                'body' => 'This is a successful growling alert.'
-            ]);
-        ?>
+        <?= $this->render('@app/views/site/alert-growl')  ?>
 
         <!-- row2 -->
         <div class="row">            
@@ -81,32 +49,7 @@ $this->title = 'My Yii Application';
                 ?>
             </div>
             <div class="col-md-3">
-                <?php                
-                $data = [
-                    "red" => "red",
-                    "green" => "green",
-                    "blue" => "blue",
-                    "orange" => "orange",
-                    "white" => "white",
-                    "black" => "black",
-                    "purple" => "purple",
-                    "cyan" => "cyan",
-                    "teal" => "teal"
-                ];
-                    echo '<label class="control-label">Tag Multiple</label>';
-                    echo kartik\select2\Select2::widget([
-                        'name' => 'color_2',
-                        'value' => ['red', 'green'], // initial value
-                        'data' => $data,
-                        'maintainOrder' => true,
-                        'theme' => kartik\select2\Select2::THEME_MATERIAL,
-                        'options' => ['placeholder' => 'Select a color ...', 'multiple' => true],
-                        'pluginOptions' => [
-                            'tags' => true,
-                            'maximumInputLength' => 10
-                        ],
-                    ]);
-                ?>
+                <?= $this->render('@app/views/site/select2') ?>
             </div>
             <div class="col-md-3">
 
@@ -115,18 +58,7 @@ $this->title = 'My Yii Application';
 
         <!-- row3  -->
         <div class="row">
-        <?php
-                echo kartik\widgets\FileInput::widget([
-                    'name' => 'attachments',                     
-                    'options' => [
-                        'multiple' => true,                        
-                    ], 
-                    'pluginOptions' => [
-                        'previewFileType' => 'any',
-                        
-                        ]
-                ]);
-                ?>
+        <?= $this->render('@app/views/site/fileinput') ?>
         </div>
 
 
