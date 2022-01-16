@@ -11,7 +11,7 @@ Modal::begin([
     'size'=>'modal-lg',
 ]);
 
-echo 'Say hello...';
+echo '<img alt="Card image cap" class="card-img-top" src="http://i3.ytimg.com/vi/vr0qNXmkUJ8/maxresdefault.jpg">';
 
 Modal::end();
 
@@ -22,8 +22,8 @@ Modal::begin([
     'clientOptions' => ['show' => true],
     'size'=>'modal-lg',
 ]);
-
-echo 'Say hello...';
+// load content
+echo '<img alt="Card image cap" class="card-img-top" src="http://i3.ytimg.com/vi/vr0qNXmkUJ8/maxresdefault.jpg">';
 
 Modal::end();
 
