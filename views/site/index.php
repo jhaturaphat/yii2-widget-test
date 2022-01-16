@@ -58,7 +58,9 @@ $this->title = 'My Yii Application';
 
         <!-- row3  -->
         <div class="row">
-        <?= $this->render('@app/views/site/fileinput') ?>
+        <div class="col-md-4"><?= $this->render('@app/views/site/fileinput') ?></div>
+        <div class="col-md-4"><?= $this->render('@app/views/site/modal') ?></div>
+        <div class="col-md-4"><?= $this->render('@app/views/site/date-time-picker') ?></div>
         </div>
 
 

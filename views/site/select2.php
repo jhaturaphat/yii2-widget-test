@@ -1,4 +1,8 @@
-<?php                
+<?php      
+use yii\widgets\Pjax;
+
+
+
     $data = [
         "red" => "red",
         "green" => "green",
@@ -10,6 +14,8 @@
         "cyan" => "cyan",
         "teal" => "teal"
     ];
+
+    Pjax::begin();
         echo '<label class="control-label">Tag Multiple</label>';
         echo kartik\select2\Select2::widget([
             'name' => 'color_2',
@@ -23,3 +29,4 @@
                 'maximumInputLength' => 10
             ],
         ]);
+    Pjax::end();

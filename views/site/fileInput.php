@@ -1,4 +1,8 @@
 <?php
+use yii\widgets\Pjax;
+
+Pjax::begin();
+
     echo kartik\widgets\FileInput::widget([
         'name' => 'attachments',                     
         'options' => [
@@ -9,4 +13,6 @@
             
             ]
     ]);
+
+Pjax::end();
 ?>
