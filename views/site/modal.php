@@ -5,8 +5,20 @@ use yii\helpers\Html;
 
 Modal::begin([
     'id' => 'my-modal',
+    // 'title' => 'Hello world',
+    'toggleButton' => ['label' => 'แสดง Modal Full Screen', 'class' => 'btn btn-primary'],
+    'clientOptions' => ['show' => true],
+    'size'=>'modal-lg',
+]);
+
+echo 'Say hello...';
+
+Modal::end();
+
+
+Modal::begin([    
     'title' => 'Hello world',
-    'toggleButton' => ['label' => 'แสดง Modal', 'class' => 'btn btn-primary'],
+    'toggleButton' => ['label' => 'แสดง Modal Normal', 'class' => 'btn btn-primary'],
     'clientOptions' => ['show' => true],
     'size'=>'modal-lg',
 ]);
@@ -17,20 +29,23 @@ Modal::end();
 
 
 $this->registerCss(" 
-  .modal {
+  #my-modal {
     padding: 0 !important; // override inline padding-right added from js
   }
-  .modal .modal-dialog {
-    width: 100%;
-    max-width: none;
-    height: 100%;
-    margin: 0;
+  #my-modal .modal-dialog {
+    width: 100% !important;
+    max-width: none !important;
+    height: 100% !important;
+    margin: 0 !important;
   }
-  .modal .modal-content {
-    height: 100%;
-    border: 0;
-    border-radius: 0;
+  #my-modal .modal-content {
+    height: 100% !important;
+    border: 0 !important;
+    border-radius: 0 !important;
   }
-  .modal .modal-body {
-    overflow-y: auto;
-  } ");
+  #my-modal .modal-body {
+    overflow-y: auto !important;
+  }
+  #my-modal .modal-header{
+    border-bottom: none !important;
+  }");
