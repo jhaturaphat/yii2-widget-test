@@ -11,7 +11,7 @@
             "version": "3.3.11",
             "source": {
                 "type": "git",
-                "url": "git@github.com:RobinHerbots/Inputmask.git",
+                "url": "https://github.com/RobinHerbots/Inputmask.git",
                 "reference": "5e670ad62f50c738388d4dcec78d2888505ad77b"
             },
             "dist": {
@@ -3282,20 +3282,24 @@
         },
         {
             "name": "codeception/stub",
-            "version": "3.7.0",
+            "version": "4.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Codeception/Stub.git",
-                "reference": "468dd5fe659f131fc997f5196aad87512f9b1304"
+                "reference": "ce0a9e418c775ca8b737d50c2b4ac1132f3990d8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Codeception/Stub/zipball/468dd5fe659f131fc997f5196aad87512f9b1304",
-                "reference": "468dd5fe659f131fc997f5196aad87512f9b1304",
+                "url": "https://api.github.com/repos/Codeception/Stub/zipball/ce0a9e418c775ca8b737d50c2b4ac1132f3990d8",
+                "reference": "ce0a9e418c775ca8b737d50c2b4ac1132f3990d8",
                 "shasum": ""
             },
             "require": {
+                "php": "^7.4 | ^8.0",
                 "phpunit/phpunit": "^8.4 | ^9.0"
+            },
+            "require-dev": {
+                "consolidation/robo": "^3.0"
             },
             "type": "library",
             "autoload": {
@@ -3310,9 +3314,9 @@
             "description": "Flexible Stub wrapper for PHPUnit's Mock Builder",
             "support": {
                 "issues": "https://github.com/Codeception/Stub/issues",
-                "source": "https://github.com/Codeception/Stub/tree/3.7.0"
+                "source": "https://github.com/Codeception/Stub/tree/4.0.1"
             },
-            "time": "2020-07-03T15:54:43+00:00"
+            "time": "2022-01-08T09:35:36+00:00"
         },
         {
             "name": "codeception/verify",
@@ -3624,9 +3628,6 @@
             },
             "require": {
                 "php": "^7.1 || ^8.0"
-            },
-            "replace": {
-                "myclabs/deep-copy": "self.version"
             },
             "require-dev": {
                 "doctrine/collections": "^1.0",
@@ -4506,20 +4507,20 @@
         },
         {
             "name": "psr/container",
-            "version": "2.0.1",
+            "version": "2.0.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/php-fig/container.git",
-                "reference": "2ae37329ee82f91efadc282cc2d527fd6065a5ef"
+                "reference": "c71ecc56dfe541dbd90c5360474fbc405f8d5963"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/php-fig/container/zipball/2ae37329ee82f91efadc282cc2d527fd6065a5ef",
-                "reference": "2ae37329ee82f91efadc282cc2d527fd6065a5ef",
+                "url": "https://api.github.com/repos/php-fig/container/zipball/c71ecc56dfe541dbd90c5360474fbc405f8d5963",
+                "reference": "c71ecc56dfe541dbd90c5360474fbc405f8d5963",
                 "shasum": ""
             },
             "require": {
-                "php": ">=7.2.0"
+                "php": ">=7.4.0"
             },
             "type": "library",
             "extra": {
@@ -4553,9 +4554,9 @@
             ],
             "support": {
                 "issues": "https://github.com/php-fig/container/issues",
-                "source": "https://github.com/php-fig/container/tree/2.0.1"
+                "source": "https://github.com/php-fig/container/tree/2.0.2"
             },
-            "time": "2021-03-24T13:40:57+00:00"
+            "time": "2021-11-05T16:47:00+00:00"
         },
         {
             "name": "psr/event-dispatcher",
@@ -7004,5 +7005,5 @@
         "php": ">=5.6.0"
     },
     "platform-dev": [],
-    "plugin-api-version": "2.0.0"
+    "plugin-api-version": "2.2.0"
 }
